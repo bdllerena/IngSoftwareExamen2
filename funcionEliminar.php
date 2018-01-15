@@ -28,7 +28,7 @@
 
     try {
       $conexion = new PDO('mysql:host=localhost;dbname=producto', $usuario, $contraseña);
-      if($opcion=='borrar'){
+      if($enviar=='enviar'){
         $bandera=0;
         $result=$conexion->query("select *from producto where id='$id';");
         foreach ($result as $fila) {
