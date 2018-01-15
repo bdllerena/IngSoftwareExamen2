@@ -8,7 +8,7 @@
     <header>
       <h2>Borrado</h2>
     </header>
-    <form class="" action="index.php" method="post">
+    <form class="" action="" method="post">
 
       <label>Ingrese el Id del Producto: </label>
       <input type="text" name="id" value="" placeholder="Id" id="id">
