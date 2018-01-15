@@ -10,3 +10,6 @@ Stock
 
 -Diego Araujo
 Insercion Base de Datos
+
+-Dario Jimenez
+Borrado Base de Datos
