@@ -1,14 +1,14 @@
 <?php
 
-	$stock=$_REQUEST['txtStock'];
+	$stock=$_REQUEST['txtMax'];
 	$cnn=mysqli_connect("localhost","root","");	
-	$bdd=mysqli_select_db($cnn,"bdproductos");
+	$bdd=mysqli_select_db($cnn,"producto");
 	$stockDB="";
 
 	 function consultar($codigo,$cnn){
 	 	$flag=0;
     
-        $sql="select * from producto where codigo LIKE '" .$codigo. "%'";
+        $sql="select * from product where codigo LIKE '" .$codigo. "%'";
         $rs=mysqli_query($cnn,$sql);
 
         $filas=mysqli_num_rows($rs);    
