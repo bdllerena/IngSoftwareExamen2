@@ -1,30 +1,37 @@
-<?php
 
-function conexion(){
-	//$user = "php";
-	//$password = "m3ywW5QFN7HLvJua";
-	$user = "root";
-	$password = "";
-	$servidor = "localhost";
-	$db = "productos";
-	$c = mysqli_connect($servidor,$user,$password,$db);
-	//mysqli_set_charset($c,"utf8");
-	return $c;
-}
+  <?php
+    $usuario='root';
+     $contraseña="";
 
-//PRUEBAS UNITARIAS DE DELETE
- function eliminacionDeProducto($id){
- 	$bandera= eliminar();
- 	if(bandera==true)
- 	{
- 		
- 	}
- 	else
- 	{
- 		
- 	}
+    $id=$_POST['id'];
+    //$name=$_POST['name'];
+    //$price=$_POST['price'];
+    //$stock=$_POST['stock'];
+    $enviar=$_POST['enviar'];
 
-
- }
-
-?>
+    //pruebas unitarias delete 1
+    try {
+      $conexion = new PDO('mysql:host=localhost;dbname=producto', $usuario, $contraseña);
+      if($opcion=='borrar'){
+          $bandera=0;
+          $result=$conexion->query("select * from producto where id='1';");
+          foreach ($result as $fila) {
+          $bandera=$fila[0];
+        }
+        if($bandera!=0)
+        {
+          $consulta="delete FROM producto where id='$id'";
+          $result=$conexion->query($consulta);
+          echo "Se elemino el registro solicitado";
+        }
+        else{
+          echo "No se encuentra dicho codigo";
+        }
+      }
+    } catch (PDOException $e) 
+    {
+      echo "El error es"+$e->getMessage();
+    }
+  ?>
+  
+</html>
