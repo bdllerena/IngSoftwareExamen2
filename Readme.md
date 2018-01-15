@@ -7,3 +7,6 @@ Name
 Date
 Price
 Stock
+
+-Diego Araujo
+Insercion Base de Datos
