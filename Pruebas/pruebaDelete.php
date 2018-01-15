@@ -9,18 +9,68 @@
     //$stock=$_POST['stock'];
     $enviar=$_POST['enviar'];
 
-    //pruebas unitarias delete 1
+    
     try {
       $conexion = new PDO('mysql:host=localhost;dbname=producto', $usuario, $contraseña);
       if($opcion=='borrar'){
+//pruebas unitarias delete elemento uno
+          $idActual=1;
           $bandera=0;
-          $result=$conexion->query("select * from producto where id='1';");
+          $result=$conexion->query("select * from product where id='$idActual';");
           foreach ($result as $fila) {
           $bandera=$fila[0];
         }
         if($bandera!=0)
         {
-          $consulta="delete FROM producto where id='$id'";
+          $consulta="delete FROM producto where id='$idActual'";
+          $result=$conexion->query($consulta);
+          echo "Se elemino el registro solicitado";
+        }
+        else{
+          echo "No se encuentra dicho codigo";
+        }
+//pruebas unitarias delete elemento random
+          $idActual=20;
+          $bandera=0;
+          $result=$conexion->query("select * from product where id='$idActual';");
+          foreach ($result as $fila) {
+          $bandera=$fila[0];
+        }
+        if($bandera!=0)
+        {
+          $consulta="delete FROM producto where id='$idActual'";
+          $result=$conexion->query($consulta);
+          echo "Se elemino el registro solicitado";
+        }
+        else{
+          echo "No se encuentra dicho codigo";
+        }
+//pruebas unitarias delete elemento inexistente
+         $idActual=0;
+          $bandera=0;
+          $result=$conexion->query("select * from product where id='$idActual';");
+          foreach ($result as $fila) {
+          $bandera=$fila[0];
+        }
+        if($bandera!=0)
+        {
+          $consulta="delete FROM producto where id='$idActual'";
+          $result=$conexion->query($consulta);
+          echo "Se elemino el registro solicitado";
+        }
+        else{
+          echo "No se encuentra dicho codigo";
+        }
+//pruebas unitarias delete letras
+         $idActual='uno';
+          $bandera=0;
+          $result=$conexion->query("select * from product where id='$idActual';");
+          foreach ($result as $fila) {
+          $bandera=$fila[0];
+        }
+        if($bandera!=0)
+        {
+          $consulta="delete FROM producto where id='$idActual'";
           $result=$conexion->query($consulta);
           echo "Se elemino el registro solicitado";
         }
