@@ -13,3 +13,6 @@ Insercion Base de Datos
 
 -Dario Jimenez
 Borrado Base de Datos
+
+Leticia
+Actualizacion
