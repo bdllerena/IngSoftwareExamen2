@@ -4,12 +4,12 @@
 	$precio=$_REQUEST['txtPrecio'];
 	$stock=$_REQUEST['txtMax'];
 	$cnn=mysqli_connect("localhost","root","");
-	$bdd=mysqli_select_db($cnn,"bdproducts");
+	$bdd=mysqli_select_db($cnn,"producto");
 
 	 function crear($codigo,$cnn){
 	 	$flag=0;
 
-        $sql="select * from producto where codigo LIKE '" .$codigo. "%'";
+        $sql="select * from product where codigo LIKE '" .$codigo. "%'";
         $rs=mysqli_query($cnn,$sql);
 
         $filas=mysqli_num_rows($rs);
@@ -41,14 +41,13 @@
     function testCrear($codigo,$cnn,$max,$stock) {
     	$result="";
       if(crear($codigo,$cnn)){
-        result="correcto";    
+        result="correcto";
       }
       echo resultado;
 
     }
-    $stockDQ="3";
-    $codigoDQ="1";
-    testVisualizar($codigoDQ,$cnn,$stockDQ,$stockDB);
+
+    testVisualizar($codigo,$nombre,$precio,$producto);
     ?>
 
 }
