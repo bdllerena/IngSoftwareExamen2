@@ -51,8 +51,8 @@
 	
 	
 	$cnn=mysqli_connect("localhost","root","1234");	// conectarse al motor de la base de datos
-	$bdd=mysqli_select_db($cnn,"espe");			// abrir la base de datos
-	$prod=new Producto($nombre, $precio, $stock);
+	$bdd=mysqli_select_db($cnn,"esp");			// abrir la base de datos
+	$prod=new Producto($nombre, $precio, $stock, $cnn);
 	
 
 	
