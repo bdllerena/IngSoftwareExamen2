@@ -27,16 +27,16 @@
     $enviar=$_POST['enviar'];
 
     try {
-      $conexion = new PDO('mysql:host=localhost;dbname=producto', $usuario, $contraseña);
+      $conexion = new PDO('mysql:host=localhost;dbname=product', $usuario, $contraseña);
       if($enviar=='enviar'){
         $bandera=0;
-        $result=$conexion->query("select *from producto where id='$id';");
+        $result=$conexion->query("select *from product where id='$id';");
         foreach ($result as $fila) {
         $bandera=$fila[0];
       }
       if($bandera!=0)
       {
-        $consulta="delete FROM producto where id='$id'";
+        $consulta="delete FROM product where id='$id'";
         $result=$conexion->query($consulta);
         echo "Se elemino el registro solicitado";
       }
