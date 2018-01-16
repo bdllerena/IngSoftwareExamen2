@@ -3,7 +3,7 @@ include 'simpletest/autorun.php';
 include 'include/Dbconfig.php';
 
 
-class pruebasUnitariasC extends UnitTestCase{
+class pruebasUnitarias extends UnitTestCase{
 	function testPruebasUnitariasPrecio()
 	{
 		$id=1234;
